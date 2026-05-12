@@ -14,3 +14,23 @@ def shout(name: str) -> str:
 
 def multi_greet(names: list[str]) -> list[str]:
     return [f"hello, {n}" for n in names]
+||||||| parent of e9751ee (feat(canary): add greet_in(name, lang) bilingual greeting)
+
+
+_GREETINGS = {
+    "en": "hello",
+    "es": "hola",
+}
+
+
+def greet_in(name: str, lang: str = "en") -> str:
+    """Return a bilingual greeting for ``name`` in the requested ``lang``.
+
+    Supported languages are ``"en"`` (default) and ``"es"``. Any other
+    ``lang`` value raises ``ValueError``.
+    """
+    try:
+        greeting = _GREETINGS[lang]
+    except KeyError as exc:
+        raise ValueError(f"unsupported lang: {lang}") from exc
+    return f"{greeting}, {name}"
