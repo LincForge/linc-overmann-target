@@ -1,15 +1,6 @@
-from src.canary import greet, hello
-||||||| parent of a199a06 (feat: add shout(name) returning uppercased exclamation greeting)
-from src.canary import hello
-from src.canary import hello, shout
-||||||| parent of 5cc3a9f (feat(canary): add multi_greet(names) batch greeting helper)
-from src.canary import hello
-from src.canary import hello, multi_greet
-||||||| parent of e9751ee (feat(canary): add greet_in(name, lang) bilingual greeting)
-from src.canary import hello
 import pytest
 
-from src.canary import greet_in, hello
+from src.canary import greet, greet_in, hello, multi_greet, shout
 
 
 def test_hello():
@@ -23,13 +14,11 @@ def test_greet():
     assert greet("world", "howdy") == "howdy, world"
     # Keyword form
     assert greet("world", greeting="howdy") == "howdy, world"
-||||||| parent of a199a06 (feat: add shout(name) returning uppercased exclamation greeting)
 
 
 def test_shout():
     assert shout("world") == "HELLO, WORLD!"
     assert shout("Alice") == "HELLO, ALICE!"
-||||||| parent of 5cc3a9f (feat(canary): add multi_greet(names) batch greeting helper)
 
 
 def test_multi_greet():
@@ -39,7 +28,6 @@ def test_multi_greet():
     assert multi_greet(["alice"]) == ["hello, alice"]
     # multi-name input
     assert multi_greet(["a", "b"]) == ["hello, a", "hello, b"]
-||||||| parent of e9751ee (feat(canary): add greet_in(name, lang) bilingual greeting)
 
 
 def test_greet_in_english():
