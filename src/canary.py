@@ -9,3 +9,8 @@ def greet(name: str, greeting: str = "hello") -> str:
 
 def shout(name: str) -> str:
     return f"HELLO, {name.upper()}!"
+||||||| parent of 5cc3a9f (feat(canary): add multi_greet(names) batch greeting helper)
+
+
+def multi_greet(names: list[str]) -> list[str]:
+    return [f"hello, {n}" for n in names]
