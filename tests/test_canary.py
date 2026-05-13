@@ -1,6 +1,6 @@
 import pytest
 
-from src.canary import greet, greet_in, hello, multi_greet, shout
+from src.canary import boom_greet, greet, greet_in, hello, multi_greet, shout
 
 
 def test_hello():
@@ -45,3 +45,7 @@ def test_greet_in_default_lang_is_english():
 def test_greet_in_unknown_lang_raises():
     with pytest.raises(ValueError):
         greet_in("x", "zz")
+
+
+def test_boom_greet():
+    assert boom_greet("world") == "BOOM, world"

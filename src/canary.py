@@ -1,3 +1,6 @@
+from src.i18n import format_greeting
+
+
 def hello(name: str) -> str:
     return f"hello, {name}"
 
@@ -8,6 +11,11 @@ def greet(name: str, greeting: str = "hello") -> str:
 
 def shout(name: str) -> str:
     return f"HELLO, {name.upper()}!"
+
+
+def boom_greet(name: str) -> str:
+    """Return ``"BOOM, {name}"`` via :func:`src.i18n.format_greeting`."""
+    return format_greeting("BOOM", name)
 
 
 def multi_greet(names: list[str]) -> list[str]:
